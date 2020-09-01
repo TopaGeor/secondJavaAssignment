@@ -1,5 +1,5 @@
 package exercise;
 
-public enum Catergories {
+public enum Catergory {
     BASIC, MID, EXTRA, PREMIUM
 }
