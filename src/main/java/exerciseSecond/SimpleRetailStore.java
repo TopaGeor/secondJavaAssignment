@@ -23,6 +23,6 @@ public class SimpleRetailStore implements IStore {
 
     @Override
     public double getRevenue() {
-        return this.totalBuyBalance - this.totalSellBalance;
+        return this.totalSellBalance - this.totalBuyBalance;
     }
 }
