@@ -2,6 +2,7 @@ import exerciseFirst.Account;
 import exerciseFirst.Category;
 import exerciseFirst.StoreAccount;
 import exerciseSecond.IStore;
+import exerciseSecond.InventoryRetailStore;
 import exerciseSecond.Product;
 import exerciseSecond.SimpleRetailStore;
 
@@ -27,5 +28,14 @@ public class Main {
         simple.buy(x4);
         simple.sell(x1);
         System.out.println(simple.getRevenue());
+
+        System.out.println();
+        IStore invStore = new InventoryRetailStore();
+        invStore.buy(x1);
+        invStore.buy(x2);
+        invStore.sell(x1);
+        System.out.println(invStore.getRevenue());
+        invStore.sell(x2);
+        ((InventoryRetailStore)invStore).getInventory();
     }
 }
