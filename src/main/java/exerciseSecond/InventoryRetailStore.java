@@ -14,14 +14,24 @@ public class InventoryRetailStore implements IStore{
     private double totalBuyBalance = 0;
     private double totalSellBalance = 0;
 
+    /**
+     * A constructor in order to set the products
+     */
     public InventoryRetailStore(){
         products = new ArrayList<>();
     }
 
+    /**
+     * Clear the products list
+     */
     public void reset(){
         this.products.clear();
     }
 
+    /**
+     * Print the inventory and return the products
+     * @return a list of products
+     */
     public List<Product> getInventory(){
         if (this.products.size() > 0) {
             this.products.forEach(System.out::println);
@@ -31,12 +41,20 @@ public class InventoryRetailStore implements IStore{
         }
     }
 
+    /**
+     * add the product to the list and update total buy balance
+     * @param product purchased product
+     */
     @Override
     public void buy(Product product) {
         this.products.add(product);
         this.totalBuyBalance += product.getPriceWhenBuy();
     }
 
+    /**
+     * check if the product exist, removed if it does and update total sell balance
+     * @param product product for selling
+     */
     @Override
     public void sell(Product product) {
         if(this.products.stream().anyMatch(p -> p.getId() == product.getId())){
@@ -47,6 +65,10 @@ public class InventoryRetailStore implements IStore{
         }
     }
 
+    /**
+     *
+     * @return difference of total sell balance and total buy balance
+     */
     @Override
     public double getRevenue() {
         return this.totalSellBalance - totalBuyBalance;
