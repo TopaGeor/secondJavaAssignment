@@ -18,29 +18,52 @@ public class StoreAccount extends Account {
         this.accountCategory = category;
     }
 
+    /**
+     * set name of the store
+     * @param storeName set store name
+     */
     public void setStoreName(String storeName) {
         this.storeName = storeName;
     }
 
+    /**
+     * Set the category of account
+     * @param accountCategory set account category
+     */
     public void setAccountCategory(Category accountCategory) {
         this.accountCategory = accountCategory;
     }
 
+    /**
+     * Return store name
+     * @return store name
+     */
     public String getStoreName() {
         return storeName;
     }
 
+    /**
+     * return account category
+     * @return account category
+     */
     public Category getAccountCategory() {
         return accountCategory;
     }
 
+    /**
+     * Changes category of the store
+     * @param newCategory the new category
+     * @return true if it is a success else return false
+     */
     public boolean changeCategory(Category newCategory){
         Category olderCategory = this.accountCategory;
         this.accountCategory = newCategory;
         return (!this.accountCategory.equals(olderCategory));
     }
 
-
+    /**
+     * Test all class methods
+     */
     @Override
     public void testMethods(){
         System.out.println(" ");
